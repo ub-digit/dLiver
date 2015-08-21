@@ -5,4 +5,32 @@
     <button class="btn btn-default" type="button" {{action 'searchPackage' query}}>Sök</button>
   </span>
 
+<table class="table">
+	<thead>
+		<tr>
+			<th>Namn</th>
+			<th>Titel</th>
+			<th>År</th>
+			<th>Författare</th>
+		</tr>
+	</thead>
+	<tbody>
+		{{#each package in model}}
+			<tr>
+				<td>{{#link-to 'package.show' package.name}}{{package.name}}{{/link-to}}</td>
+				<td>{{package.title}}</td>
+				<td>{{package.year}}</td>
+				<td>{{package.author}}</td>
+			</tr>
+		{{/each}}
+	</tbody>
+</table>
+
+
+
+
+
+
+
+
 {{#link-to 'package.show'}}Visa{{/link-to}}
