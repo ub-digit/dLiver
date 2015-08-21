@@ -1,0 +1,8 @@
+<h4>index.hbs</h4>
+  {{input value=query class="form-control"
+  action='searchPackage'}}
+  <span class="input-group-btn">
+    <button class="btn btn-default" type="button" {{action 'searchPackage' query}}>Sök</button>
+  </span>
+
+{{#link-to 'package.show'}}Visa{{/link-to}}
