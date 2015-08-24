@@ -1,7 +1,11 @@
-<h2 id="title">application.hbs</h2>
+<h2 id="title">{{#link-to 'package.index'}}dLiver{{/link-to}}</h2>
 {{#if session.isAuthenticated}}
   <a {{ action 'invalidateSession' }}>Logout</a>
 {{else}}
   {{#link-to 'login'}}Login{{/link-to}}
 {{/if}}
-{{outlet}}
+<div class="container">
+<div class="col-xs-12">
+	{{outlet}}
+</div>
+</div>
