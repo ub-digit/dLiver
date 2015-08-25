@@ -8,8 +8,14 @@ export default {
   // },
   //
   // "key.with.interpolation": "Text with {{anInterpolation}}"
+  main: {
+    title: 'DLIVER'
+  },
+
   menu: {
-    users: "Användare"
+    users: "Användare",
+    login: 'Logga in',
+    logout: 'Logga ut'
   },
 
   users: {
@@ -24,7 +30,8 @@ export default {
     cancel: "Avbryt",
     delete: "Radera användare",
     new: "Ny användare",
-    create: "Skapa användare"
+    create: "Skapa användare",
+    confirm_delete: "Är du säker på att du vill radera användaren från systemet?"
   },
 
   post: {
@@ -40,6 +47,18 @@ export default {
     pages: "Sidor",
     source: "Källa",
     goto_source: "Gå till katalogpost"
+ 
+  },
+
+  login: {
+    placeholder: {
+      username: 'Ange användarnamn',
+      password: 'Ange lösenord'
+    },
+    label: 'Logga in',
+    username: 'Användarnamn',
+    password: 'Lösenord',
+    button: 'Logga in'
   }
 
 };
