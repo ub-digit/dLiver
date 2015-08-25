@@ -8,8 +8,14 @@ export default {
   // },
   //
   // "key.with.interpolation": "Text with {{anInterpolation}}"
+  main: {
+    title: 'DLIVER'
+  },
+
   menu: {
-    users: "Användare"
+    users: "Användare",
+    login: 'Logga in',
+    logout: 'Logga ut'
   },
 
   users: {
@@ -23,7 +29,19 @@ export default {
     update: "Spara ändringar",
     cancel: "Avbryt",
     delete: "Radera användare",
-    new: "Ny användare",
-    create: "Skapa användare"
+    new: "Skapa ny användare",
+    create: "Skapa användare",
+    confirm_delete: "Är du säker på att du vill radera användaren från systemet?"
+  },
+
+  login: {
+    placeholder: {
+      username: 'Ange användarnamn',
+      password: 'Ange lösenord'
+    },
+    label: 'Logga in',
+    username: 'Användarnamn',
+    password: 'Lösenord',
+    button: 'Logga in'
   }
 };

@@ -8,8 +8,14 @@ export default {
   // },
   //
   // "key.with.interpolation": "Text with {{anInterpolation}}"
+  main: {
+    title: 'DLIVER'
+  },
+
   menu: {
-    users: "Users"
+    users: "Users",
+    login: 'Login',
+    logout: 'Logout'
   },
 
   users: {
@@ -24,6 +30,18 @@ export default {
     cancel: "Cancel",
     delete: "Delete user",
     new: "New user",
-    create: "Create user"
+    create: "Create user",
+    confirm_delete: "Do You really want to delete the user?"
+  },
+
+  login: {
+    placeholder: {
+      username: 'Enter Username',
+      password: 'Enter Password'
+    },
+    label: 'Login',
+    username: 'Username',
+    password: 'Password',
+    button: 'Login'
   }
 };
