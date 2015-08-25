@@ -3,6 +3,7 @@ import ENV from '../config/environment';
 
 export default Ember.Object.extend({
   endpoints: {
+    user: { path: 'users'},
     mets_package: {path: 'mets_packages'}
   },
 
@@ -21,7 +22,7 @@ export default Ember.Object.extend({
     var session = this.container.lookup('simple-auth-session:main');
     var headers = {};
     if(session && session.get('isAuthenticated')) {
-      headers["Authorization"] = "Token " + session.get('token');
+      headers["Authorization"] = "Token " + session.get('secure.token');
     }
     return headers;
   },
