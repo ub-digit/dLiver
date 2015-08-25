@@ -19,6 +19,11 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
+      defaultLocale: "sv",
+      librisBaseUrl: "http://libris.kb.se/bib/"
+    },
+    i18n: {
+      defaultLocale: "sv"
     }
   };
 

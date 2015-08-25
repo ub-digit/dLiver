@@ -25,5 +25,20 @@ export default {
     delete: "Delete user",
     new: "New user",
     create: "Create user"
+  },
+
+  post: {
+    info: "All your base are belong to us",
+    id: "ID",
+    full_title: "Full title",
+    title: "Title",
+    sub_title: "Sub title",
+    author: "Author", 
+    publisher: "Publisher", 
+    pub_year: "Publication year",
+    lang: "Language",
+    pages: "Pages",
+    source: "Source",
+    goto_source: "Go to catalog"
   }
 };

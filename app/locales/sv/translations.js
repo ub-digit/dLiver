@@ -25,5 +25,21 @@ export default {
     delete: "Radera användare",
     new: "Ny användare",
     create: "Skapa användare"
+  },
+
+  post: {
+    info: "Alla dina baser är tillhörde oss",
+    id: "ID",
+    full_title: "Fullständig titel",
+    title: "Titel",
+    sub_title: "Alternativ titel",
+    author: "Författare", 
+    publisher: "Utgivare", 
+    pub_year: "Utgivningsår",
+    lang: "Språk",
+    pages: "Sidor",
+    source: "Källa",
+    goto_source: "Gå till katalogpost"
   }
+
 };
