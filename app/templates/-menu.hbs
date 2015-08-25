@@ -9,6 +9,8 @@
 
     <ul class="nav navbar-nav navbar-right">
       {{#if session.isAuthenticated}}
+        <li>{{#link-to 'users.index'}}{{t 'menu.users'}}{{/link-to}}</li>
+
         <p class="navbar-text"><i class="fa fa-user"></i><strong> {{session.name}}</strong></p>
         <li><a href="javascript:void(0)" {{action 'invalidateSession'}}>Logga ut</a></li>
       {{else}}
