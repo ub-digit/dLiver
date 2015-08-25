@@ -7,6 +7,12 @@ var Router = Ember.Router.extend({
 
 Router.map(function() {
   this.resource('login');
+  this.resource('users', function(){
+    this.route('index', {path: '/'}, function(){
+      this.route('new');
+      this.route('edit', {path: '/edit/:id'});
+    });
+  });
   this.resource('package', function() {
   	this.route('index');
   	this.route('show', {path: '/:name'});
