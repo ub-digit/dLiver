@@ -8,5 +8,19 @@ export default Ember.Controller.extend({
 		} else {
 			return null;
 		}
+	}),
+
+	pdf_links: Ember.computed('model.file_groups', 'model.name', function(){
+		var links = [];
+		var that = this;
+		this.get('model.file_groups').forEach (function(fg){
+			if (fg.name === 'pdf') {
+				fg.files.forEach (function(f) {
+					var url = ENV.APP.assetURL + '/' + that.get('model.name') + '/file/' + f.id;
+					links.push(url);
+				});
+			}
+		});
+		return links;
 	})
 });

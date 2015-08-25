@@ -46,7 +46,8 @@ export default {
     lang: "Språk",
     pages: "Sidor",
     source: "Källa",
-    goto_source: "Gå till katalogpost"
+    goto_source: "Gå till katalogpost",
+    file: "Fil"
  
   },
 

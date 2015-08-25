@@ -114,6 +114,18 @@
 				</div>
 			{{/if}}
 
+			{{#each pdf_link in pdf_links}}
+				<div class="row">
+			  		<div class="col-xs-3">
+			    		<strong>{{t 'post.file'}}</strong>
+			  		</div>
+			  		<div class="col-xs-9">
+			    		<a {{bind-attr href=pdf_link}} target="_blank">pdf</a>
+			  		</div>
+				</div>
+			{{/each}}
+			
+
 		</div>
 	</div>
 

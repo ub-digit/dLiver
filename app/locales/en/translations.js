@@ -46,7 +46,8 @@ export default {
     lang: "Language",
     pages: "Pages",
     source: "Source",
-    goto_source: "Go to catalog"
+    goto_source: "Go to catalog",
+    file: "File"
     
   },
 
