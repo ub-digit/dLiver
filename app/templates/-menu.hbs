@@ -1,20 +1,17 @@
 <nav class="navbar navbar-default" role="navigation">
   <div class="container-fluid">
     <div class="navbar-header">
-      {{#link-to 'index' class="navbar-brand"}}DLIVER{{/link-to}}
+      {{#link-to 'index' class="navbar-brand"}}{{t 'main.title'}}{{/link-to}}
     </div>
-    <ul class="nav navbar-nav">
-      <li>{{#link-to 'package.index'}}dLiver{{/link-to}}</li>
-    </ul>
 
     <ul class="nav navbar-nav navbar-right">
       {{#if session.isAuthenticated}}
         <li>{{#link-to 'users.index'}}{{t 'menu.users'}}{{/link-to}}</li>
 
-        <p class="navbar-text"><i class="fa fa-user"></i><strong> {{session.name}}</strong></p>
-        <li><a href="javascript:void(0)" {{action 'invalidateSession'}}>Logga ut</a></li>
+        <p class="navbar-text"><i class="fa fa-user"></i><strong> {{session.secure.name}}</strong></p>
+        <li><a href="javascript:void(0)" {{action 'invalidateSession'}}>{{t 'menu.logout'}}</a></li>
       {{else}}
-        <li>{{#link-to 'login'}}Logga in{{/link-to}}</li>
+        <li>{{#link-to 'login'}}{{t 'menu.login'}}{{/link-to}}</li>
       {{/if}}
    </ul>
  </div>
