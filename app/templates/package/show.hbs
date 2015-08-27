@@ -81,6 +81,19 @@
 				</div>
 			{{/if}}
 
+      <div class="row">
+        <div class="col-xs-3">
+          <strong>{{t 'post.copyrightStatus'}}</strong>
+        </div>
+        <div class="col-xs-9">
+          {{#if model.copyrighted}}
+            <div class="label label-danger btn-xs">{{t 'post.copyrighted'}}</div>
+          {{else}}
+            <div class="label label-success btn-xs">{{t 'post.notCopyrighted'}}</div>
+          {{/if}}
+        </div>
+      </div>
+
 			{{#if model.lang}}
 				<div class="row">
 			  		<div class="col-xs-3">
@@ -109,18 +122,18 @@
 			    		<strong>{{t 'post.source'}}</strong>
 			  		</div>
 			  		<div class="col-xs-9">
-			    		<a {{bind-attr href=source_url}} target="_blank">{{t 'post.goto_source'}}</a>
+			    		<a href={{source_url}} target="_blank">{{t 'post.goto_source'}}</a>
 			  		</div>
 				</div>
 			{{/if}}
 
-			{{#each pdf_link in pdf_links}}
+			{{#each pdf_links as |pdf_link|}}
 				<div class="row">
 			  		<div class="col-xs-3">
 			    		<strong>{{t 'post.file'}}</strong>
 			  		</div>
 			  		<div class="col-xs-9">
-			    		<a {{bind-attr href=pdf_link}} target="_blank">pdf</a>
+			    		<a href={{pdf_link}} target="_blank">pdf</a>
 			  		</div>
 				</div>
 			{{/each}}

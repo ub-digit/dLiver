@@ -48,8 +48,10 @@ export default {
     source: "Källa",
     goto_source: "Gå till katalogpost",
     file: "Fil",
-    create_link: "Skapa länk"
- 
+    create_link: "Skapa länk",
+    copyrightStatus: "Upphosvrätt",
+    copyrighted: "Upphovsrättsskyddat",
+    notCopyrighted: "Fritt material"
   },
 
   login: {
