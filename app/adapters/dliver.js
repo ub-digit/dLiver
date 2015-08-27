@@ -4,7 +4,8 @@ import ENV from '../config/environment';
 export default Ember.Object.extend({
   endpoints: {
     user: { path: 'users'},
-    mets_package: {path: 'mets_packages'}
+    mets_package: {path: 'mets_packages'},
+    link: {path: 'links'}
   },
 
   getLocale: function() {

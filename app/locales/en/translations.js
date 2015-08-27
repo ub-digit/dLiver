@@ -47,7 +47,8 @@ export default {
     pages: "Pages",
     source: "Source",
     goto_source: "Go to catalog",
-    file: "File"
+    file: "File",
+    create_link: "Create link"
     
   },
 

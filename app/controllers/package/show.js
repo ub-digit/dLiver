@@ -22,5 +22,25 @@ export default Ember.Controller.extend({
 			}
 		});
 		return links;
-	})
+	}),
+
+	actions: {
+
+		createDate: function(name, date) {
+			var that = this;
+			var link = {};
+			link.package_name = name;
+			link.expire_date = date;
+			
+			this.store.save('link', link).then(
+		        function(response) {
+	        	  	that.transitionToRoute('package.show', name);
+	        	},
+	        	function(error) {
+	        	}
+
+			);
+		}
+	}
+	
 });

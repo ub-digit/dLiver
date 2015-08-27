@@ -47,7 +47,8 @@ export default {
     pages: "Sidor",
     source: "Källa",
     goto_source: "Gå till katalogpost",
-    file: "Fil"
+    file: "Fil",
+    create_link: "Skapa länk"
  
   },
 

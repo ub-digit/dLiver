@@ -129,7 +129,12 @@
 		</div>
 	</div>
 
-
-
+	<div class="input-group">
+		  {{input value=link_date class="form-control"
+		  action='createDate'}}
+	  	<span class="input-group-btn">
+		    <button class="btn btn-default" type="button" {{action 'createDate' model.name link_date}}>{{t 'post.create_link'}}</button>
+	  	</span>
+  	</div>
 
 </div>
