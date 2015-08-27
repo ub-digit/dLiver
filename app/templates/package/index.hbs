@@ -1,6 +1,6 @@
 	<div class="input-group">
 	  {{input value=query class="form-control"
-	  action='searchPackage'}}
+	  enter='searchPackage'}}
 	  <span class="input-group-btn">
 	    <button class="btn btn-default" type="button" {{action 'searchPackage' query}}>Sök</button>
 	  </span>
@@ -13,15 +13,23 @@
 			<th>Titel</th>
 			<th>År</th>
 			<th>Författare</th>
+      <th></th>
 		</tr>
 	</thead>
 	<tbody>
-		{{#each package in model}}
+		{{#each model as |package|}}
 			<tr>
 				<td>{{#link-to 'package.show' package.name}}{{package.name}}{{/link-to}}</td>
 				<td>{{package.title}}</td>
 				<td>{{package.year}}</td>
 				<td>{{package.author}}</td>
+        <td>
+          {{#if package.copyrighted}}
+            <div class="label label-danger btn-xs">Upphovsrättsskyddat</div>
+          {{else}}
+            <div class="label label-success btn-xs">Fritt material</div>
+          {{/if}}
+        </td>
 			</tr>
 		{{/each}}
 	</tbody>
