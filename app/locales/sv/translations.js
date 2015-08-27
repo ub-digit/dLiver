@@ -47,8 +47,10 @@ export default {
     pages: "Sidor",
     source: "Källa",
     goto_source: "Gå till katalogpost",
-    file: "Fil"
- 
+    file: "Fil",
+    copyrightStatus: "Upphosvrätt",
+    copyrighted: "Upphovsrättsskyddat",
+    notCopyrighted: "Fritt material"
   },
 
   login: {

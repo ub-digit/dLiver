@@ -9,10 +9,10 @@
 <table class="table">
 	<thead>
 		<tr>
-			<th>Namn</th>
-			<th>Titel</th>
-			<th>År</th>
-			<th>Författare</th>
+			<th>{{t 'post.id'}}</th>
+			<th>{{t 'post.title'}}</th>
+			<th>{{t 'post.pub_year'}}</th>
+			<th>{{t 'post.author'}}</th>
       <th></th>
 		</tr>
 	</thead>
@@ -25,9 +25,9 @@
 				<td>{{package.author}}</td>
         <td>
           {{#if package.copyrighted}}
-            <div class="label label-danger btn-xs">Upphovsrättsskyddat</div>
+            <div class="label label-danger btn-xs">{{t 'post.copyrighted'}}</div>
           {{else}}
-            <div class="label label-success btn-xs">Fritt material</div>
+            <div class="label label-success btn-xs">{{t 'post.notCopyrighted'}}</div>
           {{/if}}
         </td>
 			</tr>
