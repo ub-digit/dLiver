@@ -18,6 +18,12 @@ export default {
     logout: 'Logga ut'
   },
 
+  errors: {
+    link: {
+      notFound: "Länken finns ej"
+    }
+  },
+
   users: {
     header: "Användare",
     id: "ID",
@@ -51,7 +57,8 @@ export default {
     create_link: "Skapa länk",
     copyrightStatus: "Upphosvrätt",
     copyrighted: "Upphovsrättsskyddat",
-    notCopyrighted: "Fritt material"
+    notCopyrighted: "Fritt material",
+    unlocked_until: "Upplåst till"
   },
 
   login: {

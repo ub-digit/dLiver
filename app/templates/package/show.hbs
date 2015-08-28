@@ -1,5 +1,10 @@
 <div class="container">
 
+{{#if model.unlocked_until_date}}
+  <div class="alert alert-info">
+    {{t 'post.unlocked_until'}} {{model.unlocked_until_date}}
+  </div>
+{{/if}}
 	<div class="panel panel-default">
 	  	<div class="panel-heading" style="padding-top:8px;">
 	  		<h2>{{model.title}}</h2>
@@ -133,7 +138,11 @@
 			    		<strong>{{t 'post.file'}}</strong>
 			  		</div>
 			  		<div class="col-xs-9">
+            {{#if model.unlocked}}
 			    		<a href={{pdf_link}} target="_blank">pdf</a>
+              {{else}}
+                pdf (Du f[r inte titta p[ den h'r filen hahaha)
+              {{/if}}
 			  		</div>
 				</div>
 			{{/each}}
@@ -143,8 +152,7 @@
 	</div>
 
 	<div class="input-group">
-		  {{input value=link_date class="form-control"
-		  action='createDate'}}
+		  {{input value=link_date class="form-control"}}
 	  	<span class="input-group-btn">
 		    <button class="btn btn-default" type="button" {{action 'createDate' model.name link_date}}>{{t 'post.create_link'}}</button>
 	  	</span>
