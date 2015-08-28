@@ -1,11 +1,16 @@
 	<div class="input-group">
-	  {{input value=query class="form-control"
-	  enter='searchPackage'}}
+	  {{debounced-input 
+    fireAtStart=false
+    value=query 
+    class="form-control"
+    placeholder='Titel, Författare, År ...'
+    }}
 	  <span class="input-group-btn">
-	    <button class="btn btn-default" type="button" {{action 'searchPackage' query}}>Sök</button>
+	    <button class="btn btn-default" type="button">Sök</button>
 	  </span>
   </div>
 
+{{#if model}}
 <table class="table">
 	<thead>
 		<tr>
@@ -34,3 +39,4 @@
 		{{/each}}
 	</tbody>
 </table>
+{{/if}}

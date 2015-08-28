@@ -13,11 +13,6 @@
 	</div>
 
 	<div class="panel-body">
-	   	<div class="row">
-	      	<div class="col-xs-6">
-	      		{{t 'post.info'}}
-			</div>
-		</div>
 
 		<div>
 			{{#if model.name}}
@@ -139,9 +134,9 @@
 			  		</div>
 			  		<div class="col-xs-9">
             {{#if model.unlocked}}
-			    		<a href={{pdf_link}} target="_blank">pdf</a>
+			    		<a class="btn btn-default btn-xl" href={{pdf_link}} target="_blank">PDF</a>
               {{else}}
-                pdf (Du f[r inte titta p[ den h'r filen hahaha)
+                <button class="btn btn-default btn-xl" disabled="true">PDF</button> ({{t 'post.filesNotAccessible'}})
               {{/if}}
 			  		</div>
 				</div>
@@ -151,11 +146,39 @@
 		</div>
 	</div>
 
-	<div class="input-group">
-		  {{input value=link_date class="form-control"}}
+{{#if model.copyrighted}}
+  {{#if session.isAuthenticated}}
+  <h2>{{t 'post.links'}}</h2>
+  {{#if model.links}}
+    <table class="table">
+    <thead>
+      <tr>
+        <th>{{t 'link.url'}}</th>
+        <th>{{t 'link.expireDate'}}</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+    {{#each model.links as |link|}}
+      <tr>
+        <td>{{hostOrigin}}/#/link/{{link.link_hash}}</td>
+        <td>{{link.expire_date}}</td>
+        <td><button class="btn btn-xs btn-danger" {{action 'deleteDate' link}}>Radera</button></td>
+      </tr>
+    {{/each}}
+    </tbody>
+  </table>
+  {{/if}}
+    <div class="col-xs-12 col-sm-3">
+	  <div class="input-group">
+		  {{input value=link_date class="form-control" placeholder="YYYY-MM-DD"}}
 	  	<span class="input-group-btn">
 		    <button class="btn btn-default" type="button" {{action 'createDate' model.name link_date}}>{{t 'post.create_link'}}</button>
 	  	</span>
   	</div>
+    </div>
+
+  {{/if}}
+{{/if}}
 
 </div>

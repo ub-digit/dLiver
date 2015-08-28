@@ -41,7 +41,6 @@ export default {
   },
 
   post: {
-    info: "Alla dina baser är tillhörde oss",
     id: "ID",
     full_title: "Fullständig titel",
     title: "Titel",
@@ -58,7 +57,15 @@ export default {
     copyrightStatus: "Upphosvrätt",
     copyrighted: "Upphovsrättsskyddat",
     notCopyrighted: "Fritt material",
-    unlocked_until: "Upplåst till"
+    unlocked_until: "Upplåst till",
+    searchPlaceholder: "PaketID, Titel, Författare, Årtal",
+    links: "Länkar",
+    filesNotAccessible: "Filer är ej åtkomliga"
+  },
+
+  link: {
+    url: "Länkadress",
+    expireDate: "Giltighetstid"
   },
 
   login: {

@@ -32,6 +32,10 @@ export default Ember.Controller.extend({
 		return links;
 	}),
 
+  hostOrigin: Ember.computed('model', function(){
+    return location.origin;
+  }),
+
 	actions: {
 
 		createDate: function(name, date) {
@@ -42,13 +46,25 @@ export default Ember.Controller.extend({
 			
 			this.store.save('link', link).then(
 		        function(response) {
-	        	  	that.transitionToRoute('package.show', name);
-	        	},
+	        	  that.send('refreshModel');
+            },
 	        	function(error) {
 	        	}
 
 			);
-		}
+		},
+
+    deleteDate: function(link) {
+      var that = this;
+      this.store.destroy('link', link.link_hash).then(
+        function(response) {
+          that.send('refreshModel');
+        },
+        function(error) {
+        }
+      );
+    }
+
 	}
 	
 });
