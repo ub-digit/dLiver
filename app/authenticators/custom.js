@@ -32,6 +32,7 @@ export default Base.extend({
           resolve({
             authenticated: true,
             token: token,
+            name: response.user.name,
             username: response.user.username,
             userid: response.user.id,
           });

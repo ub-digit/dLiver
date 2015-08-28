@@ -3,7 +3,6 @@
     <div class="navbar-header">
       {{#link-to 'index' class="navbar-brand"}}{{t 'main.title'}}{{/link-to}}
     </div>
-
     <ul class="nav navbar-nav navbar-right">
       {{#if session.isAuthenticated}}
         <li>{{#link-to 'users.index'}}{{t 'menu.users'}}{{/link-to}}</li>
