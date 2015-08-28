@@ -4,6 +4,9 @@ export default Ember.Route.extend({
   model: function(params) {
     return this.store.find('user', params.id);
   },
+
+  i18n: Ember.inject.service(),
+
   actions: {
     saveUser: function(model) {
       var that = this; // To be used in nested functions
@@ -19,10 +22,12 @@ export default Ember.Route.extend({
         }
       );
     },
+
     deleteUser: function(id) {
       var that = this;
       // Send confirmation box before delete
-      var should_delete = confirm(Ember.I18n.t("users.confirm_delete"));
+      var should_delete = confirm(this.get('i18n').t('users.confirm_delete'));
+      //this.get('i18n').t('users.confirm_delete');
       if (should_delete){
         this.store.destroy('user', id).then(
           function() {
