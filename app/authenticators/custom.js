@@ -17,8 +17,6 @@ export default Base.extend({
   },
   authenticate: function(credentials) {
     Ember.$('body').addClass("loading");
-    console.log("credentials.identification: " + credentials.identification);
-    console.log("credentials.password: " + credentials.password);
     return new Ember.RSVP.Promise(function(resolve, reject) {
       Ember.$.ajax({
         type: 'POST',
