@@ -29,9 +29,29 @@ export default {
     update: "Spara ändringar",
     cancel: "Avbryt",
     delete: "Radera användare",
-    new: "Skapa ny användare",
+    new: "Ny användare",
     create: "Skapa användare",
     confirm_delete: "Är du säker på att du vill radera användaren från systemet?"
+  },
+
+  post: {
+    info: "Alla dina baser är tillhörde oss",
+    id: "ID",
+    full_title: "Fullständig titel",
+    title: "Titel",
+    sub_title: "Alternativ titel",
+    author: "Författare", 
+    publisher: "Utgivare", 
+    pub_year: "Utgivningsår",
+    lang: "Språk",
+    pages: "Sidor",
+    source: "Källa",
+    goto_source: "Gå till katalogpost",
+    file: "Fil",
+    create_link: "Skapa länk",
+    copyrightStatus: "Upphosvrätt",
+    copyrighted: "Upphovsrättsskyddat",
+    notCopyrighted: "Fritt material"
   },
 
   login: {
@@ -44,4 +64,5 @@ export default {
     password: 'Lösenord',
     button: 'Logga in'
   }
+
 };

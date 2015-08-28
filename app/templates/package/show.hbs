@@ -1,6 +1,153 @@
-<p><b>Namn: </b>{{model.name}}</p>
-<p><b>Titel: </b>{{model.title}}</p>
-<p><b>År: </b>{{model.year}}</p>
-<p><b>Författare: </b>{{model.author}}</p>
+<div class="container">
 
+	<div class="panel panel-default">
+	  	<div class="panel-heading" style="padding-top:8px;">
+	  		<h2>{{model.title}}</h2>
+	  		{{#if model.sub_title}}{{model.sub_title}}{{/if}}
+		</div>
+	</div>
 
+	<div class="panel-body">
+	   	<div class="row">
+	      	<div class="col-xs-6">
+	      		{{t 'post.info'}}
+			</div>
+		</div>
+
+		<div>
+			{{#if model.name}}
+				<div class="row">
+			  		<div class="col-xs-3">
+			    		<strong>{{t 'post.id'}}</strong>
+			  		</div>
+			  		<div class="col-xs-9">
+			    		{{model.name}}
+			  		</div>
+				</div>
+			{{/if}}
+
+			{{#if model.title}}
+				<div class="row">
+			  		<div class="col-xs-3">
+			    		<strong>{{t 'post.title'}}</strong>
+			  		</div>
+			  		<div class="col-xs-9">
+			    		{{model.title}}
+			  		</div>
+				</div>
+			{{/if}}
+
+			{{#if model.sub_title}}
+				<div class="row">
+			  		<div class="col-xs-3">
+			    		<strong>{{t 'post.sub_title'}}</strong>
+			  		</div>
+			  		<div class="col-xs-9">
+			    		{{model.sub_title}}
+			  		</div>
+				</div>
+			{{/if}}
+
+			{{#if model.author}}
+				<div class="row">
+			  		<div class="col-xs-3">
+			    		<strong>{{t 'post.author'}}</strong>
+			  		</div>
+			  		<div class="col-xs-9">
+			    		{{model.author}}
+			  		</div>
+				</div>
+			{{/if}}
+
+			{{#if model.publisher}}
+				<div class="row">
+			  		<div class="col-xs-3">
+			    		<strong>{{t 'post.publisher'}}</strong>
+			  		</div>
+			  		<div class="col-xs-9">
+			    		{{model.publisher}}
+			  		</div>
+				</div>
+			{{/if}}
+
+			{{#if model.year}}
+				<div class="row">
+			  		<div class="col-xs-3">
+			    		<strong>{{t 'post.pub_year'}}</strong>
+			  		</div>
+			  		<div class="col-xs-9">
+			    		{{model.year}}
+			  		</div>
+				</div>
+			{{/if}}
+
+      <div class="row">
+        <div class="col-xs-3">
+          <strong>{{t 'post.copyrightStatus'}}</strong>
+        </div>
+        <div class="col-xs-9">
+          {{#if model.copyrighted}}
+            <div class="label label-danger btn-xs">{{t 'post.copyrighted'}}</div>
+          {{else}}
+            <div class="label label-success btn-xs">{{t 'post.notCopyrighted'}}</div>
+          {{/if}}
+        </div>
+      </div>
+
+			{{#if model.lang}}
+				<div class="row">
+			  		<div class="col-xs-3">
+			    		<strong>{{t 'post.lang'}}</strong>
+			  		</div>
+			  		<div class="col-xs-9">
+			    		{{model.lang}}
+			  		</div>
+				</div>
+			{{/if}}
+
+			{{#if model.page_count}}
+				<div class="row">
+			  		<div class="col-xs-3">
+			    		<strong>{{t 'post.pages'}}</strong>
+			  		</div>
+			  		<div class="col-xs-9">
+			    		{{model.page_count}}
+			  		</div>
+				</div>
+			{{/if}}
+
+			{{#if source_url}}
+				<div class="row">
+			  		<div class="col-xs-3">
+			    		<strong>{{t 'post.source'}}</strong>
+			  		</div>
+			  		<div class="col-xs-9">
+			    		<a href={{source_url}} target="_blank">{{t 'post.goto_source'}}</a>
+			  		</div>
+				</div>
+			{{/if}}
+
+			{{#each pdf_links as |pdf_link|}}
+				<div class="row">
+			  		<div class="col-xs-3">
+			    		<strong>{{t 'post.file'}}</strong>
+			  		</div>
+			  		<div class="col-xs-9">
+			    		<a href={{pdf_link}} target="_blank">pdf</a>
+			  		</div>
+				</div>
+			{{/each}}
+			
+
+		</div>
+	</div>
+
+	<div class="input-group">
+		  {{input value=link_date class="form-control"
+		  action='createDate'}}
+	  	<span class="input-group-btn">
+		    <button class="btn btn-default" type="button" {{action 'createDate' model.name link_date}}>{{t 'post.create_link'}}</button>
+	  	</span>
+  	</div>
+
+</div>

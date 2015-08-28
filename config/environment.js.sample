@@ -19,10 +19,11 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
-      defaultLocale: 'sv'
+      defaultLocale: "sv",
+      librisBaseUrl: "http://libris.kb.se/bib/"
     },
     i18n: {
-      defaultLocale: 'sv'
+      defaultLocale: "sv"
     }
   };
 
@@ -34,6 +35,7 @@ module.exports = function(environment) {
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
     ENV.contentSecurityPolicyHeader = 'Disabled-Content-Security-Policy';
     ENV.APP.serviceURL = 'http://localhost:3000/v1';
+    ENV.APP.assetURL = 'http://localhost:3000/assets';
     ENV.APP.authenticationBaseURL = 'http://localhost:3000/session';
   }
 

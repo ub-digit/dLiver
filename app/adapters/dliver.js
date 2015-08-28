@@ -5,7 +5,8 @@ export default Ember.Object.extend({
   endpoints: {
     user: { path: 'users'},
     role: { path: 'config/role_list'},
-    mets_package: {path: 'mets_packages'}
+    mets_package: {path: 'mets_packages'},
+    link: {path: 'links'}
   },
 
   getLocale: function() {
