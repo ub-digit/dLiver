@@ -15,11 +15,3 @@
 <label class="col-xs-12">{{t 'users.email'}}
   {{input type="text" classBinding=":form-control :col-xs-6" value=model.email}}
 </label>
-
-<label class="col-xs-12">{{t 'users.role'}}
-  {{view 'select' content=roleSelection
-  value=model.role
-  optionValuePath="content.name"
-  optionLabelPath="content.name"
-  }}
-</label>
