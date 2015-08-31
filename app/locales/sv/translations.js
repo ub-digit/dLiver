@@ -44,7 +44,7 @@ export default {
     id: "ID",
     full_title: "Fullständig titel",
     title: "Titel",
-    sub_title: "Alternativ titel",
+    sub_title: "Undertitel",
     author: "Författare", 
     publisher: "Utgivare", 
     pub_year: "Utgivningsår",
