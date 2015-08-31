@@ -60,7 +60,8 @@ export default {
     unlocked_until: "Upplåst till",
     searchPlaceholder: "PaketID, Titel, Författare, Årtal",
     links: "Länkar",
-    filesNotAccessible: "Filer är ej åtkomliga"
+    filesNotAccessible: "Filer är ej åtkomliga",
+    typeOfRecord: "Materialtyp"
   },
 
   link: {

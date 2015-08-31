@@ -18,6 +18,7 @@
 			<th>{{t 'post.title'}}</th>
 			<th>{{t 'post.pub_year'}}</th>
 			<th>{{t 'post.author'}}</th>
+      <th>{{t 'post.typeOfRecord'}}</th>
       <th></th>
 		</tr>
 	</thead>
@@ -28,6 +29,11 @@
 				<td>{{package.title}}</td>
 				<td>{{package.year}}</td>
 				<td>{{package.author}}</td>
+        <td>
+        {{#each package.type_of_record as |typeOfRecord|}}
+            {{type-of-record typeOfRecord=typeOfRecord}}
+        {{/each}}  
+        </td>
         <td>
           {{#if package.copyrighted}}
             <div class="label label-danger btn-xs">{{t 'post.copyrighted'}}</div>
