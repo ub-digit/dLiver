@@ -16,7 +16,7 @@
 		<tr>
 			<th>{{t 'post.id'}}</th>
 			<th>{{t 'post.title'}}</th>
-			<th>{{t 'post.pub_year'}}</th>
+            <!--	<th>{{t 'post.pub_year'}}</th> -->
 			<th>{{t 'post.author'}}</th>
       <th>{{t 'post.typeOfRecord'}}</th>
       <th></th>
@@ -27,8 +27,8 @@
 			<tr>
 				<td>{{#link-to 'package.show' package.name}}{{package.name}}{{/link-to}}</td>
 				<td>{{package.title}}</td>
-				<td>{{package.year}}</td>
-				<td>{{package.author}}</td>
+                <!-- <td>{{package.year}}</td> -->
+				<td>{{package.authors}}</td>
         <td>
         {{#each package.type_of_record as |typeOfRecord|}}
             {{type-of-record typeOfRecord=typeOfRecord}}
