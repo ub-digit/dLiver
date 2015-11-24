@@ -1,0 +1,6 @@
+<h3>{{facetField}}</h3>
+<ul class="list-unstyled">
+  {{#each facetValues as |facetValue| }}
+    {{facet-value facetField=facetField facetValue=facetValue facetQueries=facetQueries}}
+  {{/each}}
+</ul>

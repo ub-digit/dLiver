@@ -1,3 +1,5 @@
+  <div class="row">
+  <div class="col-xs-12">
 	<div class="input-group">
 	  {{debounced-input 
     fireAtStart=false
@@ -6,11 +8,25 @@
     placeholder='Titel, Författare, År ...'
     }}
 	  <span class="input-group-btn">
-	    <button class="btn btn-default" type="button">Sök</button>
+	    <button class="btn btn-default" type="button" {{action 'clearSearch'}}>Rensa</button>
 	  </span>
+    </div>
+  </div>
   </div>
 
 {{#if model}}
+  <div class="row">
+    <div class="col-xs-12">
+      Antal träffar: {{model.meta.query.total}}
+    </div>
+  </div>
+  <div class="row">
+  <div class="col-xs-12 col-sm-4 col-md-3">
+      {{#each model.meta.query.facet_fields as |facetField|}}
+        {{facet-field facetField=facetField facetCounts=model.meta.facet_counts facetQueries=model.meta.query.facet_queries}}
+      {{/each}}
+      </div>
+      <div class="col-xs-12 col-sm-8 col-md-9">
 <table class="table">
 	<thead>
 		<tr>
@@ -45,4 +61,6 @@
 		{{/each}}
 	</tbody>
 </table>
+</div>
+</div>
 {{/if}}
