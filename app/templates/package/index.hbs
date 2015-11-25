@@ -16,7 +16,7 @@
 
 {{#if model}}
   <div class="row">
-    <div class="col-xs-12">
+    <div class="col-xs-12 text-center">
       Antal träffar: {{model.meta.query.total}}
     </div>
   </div>
@@ -27,40 +27,9 @@
       {{/each}}
       </div>
       <div class="col-xs-12 col-sm-8 col-md-9">
-<table class="table">
-	<thead>
-		<tr>
-			<th>{{t 'post.id'}}</th>
-			<th>{{t 'post.title'}}</th>
-            <!--	<th>{{t 'post.pub_year'}}</th> -->
-			<th>{{t 'post.author'}}</th>
-      <th>{{t 'post.typeOfRecord'}}</th>
-      <th></th>
-		</tr>
-	</thead>
-	<tbody>
-		{{#each model as |package|}}
-			<tr>
-				<td>{{#link-to 'package.show' package.name}}{{package.name}}{{/link-to}}</td>
-				<td>{{package.title}}</td>
-                <!-- <td>{{package.year}}</td> -->
-				<td>{{package.authors}}</td>
-        <td>
-        {{#each package.type_of_record as |typeOfRecord|}}
-            {{type-of-record typeOfRecord=typeOfRecord}}
-        {{/each}}  
-        </td>
-        <td>
-          {{#if package.copyrighted}}
-            <div class="label label-danger btn-xs">{{t 'post.copyrighted'}}</div>
-          {{else}}
-            <div class="label label-success btn-xs">{{t 'post.notCopyrighted'}}</div>
-          {{/if}}
-        </td>
-			</tr>
-		{{/each}}
-	</tbody>
-</table>
+      {{#each model as |package|}}
+        {{package-item package=package}}
+      {{/each}}
 </div>
 </div>
 {{/if}}
