@@ -1,0 +1,22 @@
+
+<img src="thumbnail.jpg"/>
+<div class="item-info">
+<span class="title">{{#link-to 'package.show' package.name}}{{titleFull}}{{/link-to}}</span>
+<span class="meta" title="{{package.authors}}">2015, {{package.authors}}</span>
+<span class="name">{{package.name}}</span>
+{{#if package.highlights}}
+  <ul class="list-unstyled highlights">
+    {{#each package.highlights as |highlight|}}
+      <li>{{highlight.field}}: {{{highlight.highlight}}}</li>
+    {{/each}}
+  </ul>
+{{/if}}
+{{#each package.type_of_record as |typeOfRecord|}}
+  {{type-of-record typeOfRecord=typeOfRecord}}
+{{/each}}  
+{{#if package.copyrighted}}
+  <div class="label label-danger btn-xs">{{t 'post.copyrighted'}}</div>
+{{else}}
+  <div class="label label-success btn-xs">{{t 'post.notCopyrighted'}}</div>
+{{/if}}
+</div>
