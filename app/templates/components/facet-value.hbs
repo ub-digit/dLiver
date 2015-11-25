@@ -1,5 +1,5 @@
 {{#if isActive}}
-<a href="javascript.void();"{{action 'removeFacetFromQuery' facetValue.label}}><strong>{{facetValue.label}} ({{facetValue.count}})</strong></a>
+<a href="javascript.void();"{{action 'removeFacetFromQuery' facetValue.label}}><strong>{{facetValueTranslation}} ({{facetValue.count}})</strong></a>
 {{else}}
-<a href="javascript.void();"{{action 'addFacetToQuery' facetValue.label}}>{{facetValue.label}} ({{facetValue.count}})</a>
+<a href="javascript.void();"{{action 'addFacetToQuery' facetValue.label}}>{{facetValueTranslation}} ({{facetValue.count}})</a>
 {{/if}}

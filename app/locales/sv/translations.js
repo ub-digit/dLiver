@@ -78,6 +78,62 @@ export default {
     username: 'Användarnamn',
     password: 'Lösenord',
     button: 'Logga in'
+  },
+
+  facet: {
+    copyrighted: "Upphovsrätt",
+    copyrightedValues: {
+      true: "Upphovsrättsskyddat",
+      false: "Fritt material"
+    },
+    type_of_record: "Materialtyp",
+    type_of_recordValues: {
+      "conference publication": "Konferenspublikation",
+      "notated music": "Musikverk",
+      "short story": "Novell",
+      "software, multimedia": "Mjukvara, multimedia",
+      bibliography: "Bibliografi",
+      biography: "Biografi",
+      book: "Bok",
+      cartographic: "Kartverk",
+      catalog: "Katalog",
+      document: "Dokument",
+      drama: "Drama",
+      essay: "Uppsats",
+      festschrift: "Festskrift",
+      letter: "Brev",
+      manuscript: "Handskrift",
+      newspaper: "Dagstidning",
+      novel: "Roman",
+      periodical: "Periodika",
+      series: "Serie",
+      text: "Text",
+      theses: "Avhandling"
+    },
+    author_facet: "Författare",
+    language: "Språk",
+    languageValues: {
+      swe: "Svenska",
+      eng: "Engleska",
+      ita: "Italienska",
+      Danska: "Danska",
+      hun: "Ungerska",
+      fre: "Franska",
+      ger: "Tyska",
+      ara: "Arabiska",
+      Fransk: "Franska",
+      dan: "Danska",
+      rus: "Ryska",
+      nor: "Norska",
+      grc: "Grekiska",
+      lat: "Latin",
+      mul: "Flerspråkigt verk",
+      und: "Ospecificerat språk",
+      zxx: "Inget språk"
+    },
+    ordinal_1_facet: "Årgång",
+    ordinal_2_facet: "Nummer",
+    ordinal_3_facet: "Special"
   }
 
 };

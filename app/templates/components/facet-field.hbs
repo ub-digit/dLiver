@@ -1,6 +1,8 @@
-<h3>{{facetField}}</h3>
+{{#if facetValues}}
+<h3>{{facetFieldTranslation}}</h3>
 <ul class="list-unstyled">
   {{#each facetValues as |facetValue| }}
     {{facet-value facetField=facetField facetValue=facetValue facetQueries=facetQueries}}
   {{/each}}
 </ul>
+{{/if}}
