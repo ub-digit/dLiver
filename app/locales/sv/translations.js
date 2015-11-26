@@ -115,7 +115,7 @@ export default {
     language: "Språk",
     languageValues: {
       swe: "Svenska",
-      eng: "Engleska",
+      eng: "Engelska",
       ita: "Italienska",
       Danska: "Danska",
       hun: "Ungerska",
