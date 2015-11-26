@@ -81,6 +81,7 @@ export default {
   },
 
   facet: {
+    title_facet: "Titel",
     copyrighted: "Upphovsrätt",
     copyrightedValues: {
       true: "Upphovsrättsskyddat",
