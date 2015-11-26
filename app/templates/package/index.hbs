@@ -27,7 +27,7 @@
       {{/each}}
       </div>
       <div class="col-xs-12 col-sm-8 col-md-9">
-      {{#each model as |package|}}
+      {{#each model key="id" as |package|}}
         {{package-item package=package}}
       {{/each}}
 </div>

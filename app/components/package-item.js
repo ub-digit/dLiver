@@ -1,4 +1,5 @@
 import Ember from 'ember';
+import ENV from 'd-liver-ember/config/environment';
 
 export default Ember.Component.extend({
   classNames: ['package-item', 'clearfix'],
@@ -15,5 +16,9 @@ export default Ember.Component.extend({
     var array = [this.get('package.ordinal_1'), this.get('package.ordinal_2'), this.get('package.ordinal_3')]
 
     return array.compact().join(' ');
+  }),
+
+  thumbnail: Ember.computed('package', function(){
+    return ENV.APP.serviceURL + '/mets_packages/' + this.get('package.name') + '/thumbnail';
   })
 });
