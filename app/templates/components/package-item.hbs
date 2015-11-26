@@ -2,7 +2,7 @@
 <img src="thumbnail.jpg"/>
 <div class="item-info">
 <span class="title">{{#link-to 'package.show' package.name}}{{titleFull}}{{/link-to}}</span>
-<span class="meta" title="{{package.authors}}">2015, {{package.authors}}</span>
+<span class="meta" title="{{package.authors}}">{{package.pubyear}}{{#if package.authors}}, {{package.authors}}{{/if}}</span>
 <span class="name">{{package.name}}</span>
 {{#if package.highlights}}
   <ul class="list-unstyled highlights">
@@ -11,6 +11,7 @@
     {{/each}}
   </ul>
 {{/if}}
+<div>
 {{#each package.type_of_record as |typeOfRecord|}}
   {{type-of-record typeOfRecord=typeOfRecord}}
 {{/each}}  
@@ -19,4 +20,5 @@
 {{else}}
   <div class="label label-success btn-xs">{{t 'post.notCopyrighted'}}</div>
 {{/if}}
+</div>
 </div>
