@@ -11,13 +11,17 @@ export default Ember.Component.extend({
 
   showAll: false,
 
-  showToggleAllLink: Ember.computed.gt('maxNumberToShow', this.get('facetValues.length')),
+  showToggleAllLink: Ember.computed('facetValues.length', 'maxNumberToShow', function() {
+
+    return (this.get('facetValues.length') > this.get('maxNumberToShow'));
+
+  }),
 
   limitedFacetValues: Ember.computed('facetValues', 'showAll', function(){
     if (this.get('showAll')) {
       return this.get('facetValues');
     } else {
-      return this.get('facetValues').slice(0, this.get('maxNumberToShow') - 1);
+      return this.get('facetValues').slice(0, this.get('maxNumberToShow'));
     }
   }),
 

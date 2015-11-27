@@ -8,8 +8,20 @@ export default Ember.Component.extend({
     var highlights = Ember.A([]);
   }),
 
-  titleFull: Ember.computed('package.title', 'ordinals', function(){
-    return this.get('package.title') + " " + this.get('ordinals');
+  titleFull: Ember.computed('titleTruncated', 'ordinals', function(){
+    return this.get('titleTruncated') + " " + this.get('ordinals');
+  }),
+
+  titleTruncated: Ember.computed('package.title', function() {
+
+    var maxChars = 200;
+
+    if (this.get('package.title.length') > maxChars) {
+      return this.get('package.title').substring(0, maxChars) + '...';
+    } else {
+      return this.get('package.title');
+    }
+
   }),
 
   ordinals: Ember.computed('package.ordinal_1', 'package.ordinal_2', 'package.ordinal_3', function(){
