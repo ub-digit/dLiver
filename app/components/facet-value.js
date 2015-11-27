@@ -4,7 +4,7 @@ export default Ember.Component.extend({
   i18n: Ember.inject.service(),
 
   tagName: 'li',
-  
+
   addFacetToQueryAction: 'addFacetToQuery',
   removeFacetFromQuery: 'removeFacetFromQuery',
 
@@ -17,14 +17,23 @@ export default Ember.Component.extend({
   }),
 
   facetValueTranslation: Ember.computed('facetField', 'facetValue', function(){
+
+    var maxChars = 30;
+
     // Check if translation exists, return original value if it doesn't
-    var translation = this.get('i18n').t('facet.' + this.get('facetField') + 'Values.' + this.get('facetValue.label'));
-    if (translation.toString().indexOf("Missing translation") != 0){
-      return translation
-    } else {
-      return this.get('facetValue.label')
+    var translation = this.get('i18n').t('facet.' + this.get('facetField') + 'Values.' + this.get('facetValue.label')).toString();
+
+    if (translation.indexOf("Missing translation") === 0){
+      translation = this.get('facetValue.label')
     }
-  }), 
+
+    if (translation.length > maxChars) {
+      return translation.substr(0, maxChars) + '...';
+    } else {
+      return translation;
+    }
+
+  }),
 
   actions: {
     addFacetToQuery: function(facetLabel){

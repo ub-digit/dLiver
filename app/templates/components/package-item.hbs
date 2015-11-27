@@ -1,7 +1,7 @@
 
 <img src="{{thumbnail}}"/>
 <div class="item-info">
-<span class="title">{{#link-to 'package.show' package.name}}{{titleFull}}{{/link-to}}</span>
+<span class="title">{{#link-to 'package.show' package.name titleBinding=package.title}}{{titleFull}}{{/link-to}}</span>
 <span class="meta" title="{{package.authors}}">{{package.pubyear}}{{#if package.authors}}, {{package.authors}}{{/if}}</span>
 <span class="name">{{package.name}}</span>
 {{#if package.highlights}}
