@@ -1,184 +1,117 @@
 <div class="container">
 
-{{#if model.unlocked_until_date}}
+  {{#if model.unlocked_until_date}}
   <div class="alert alert-info">
     {{t 'post.unlocked_until'}} {{model.unlocked_until_date}}
   </div>
-{{/if}}
-	<div class="panel panel-default">
-	  	<div class="panel-heading" style="padding-top:8px;">
-	  		<h2>{{model.title}}</h2>
-	  		{{#if model.sub_title}}{{model.sub_title}}{{/if}}
-		</div>
-	</div>
+  {{/if}}
 
-	<div class="panel-body">
 
-		<div>
-			{{#if model.name}}
-				<div class="row">
-			  		<div class="col-xs-3">
-			    		<strong>{{t 'post.id'}}</strong>
-			  		</div>
-			  		<div class="col-xs-9">
-			    		{{model.name}}
-			  		</div>
-				</div>
-			{{/if}}
+  <div class="row">
+    <div class="col-sm-4">
+      <img src="{{thumbnail}}" class="img-responsive"/>
+    </div>
 
-			{{#if model.title}}
-				<div class="row">
-			  		<div class="col-xs-3">
-			    		<strong>{{t 'post.title'}}</strong>
-			  		</div>
-			  		<div class="col-xs-9">
-			    		{{model.title}}
-			  		</div>
-				</div>
-			{{/if}}
+    <div class="col-sm-8">
+      <h1>{{model.title}}</h1>
+      {{#if model.sub_title}}
+        <h2>{{model.sub_title}}</h2>
+      {{/if}}
+      <dl class="dl-horizontal">
 
-			{{#if model.sub_title}}
-				<div class="row">
-			  		<div class="col-xs-3">
-			    		<strong>{{t 'post.sub_title'}}</strong>
-			  		</div>
-			  		<div class="col-xs-9">
-			    		{{model.sub_title}}
-			  		</div>
-				</div>
-			{{/if}}
+        {{#if model.name}}
+        <dt>{{t 'post.id'}}</dt>
+        <dd>{{model.name}}</dd>
+        {{/if}}
 
-			{{#if model.author}}
-				<div class="row">
-			  		<div class="col-xs-3">
-			    		<strong>{{t 'post.author'}}</strong>
-			  		</div>
-			  		<div class="col-xs-9">
-			    		{{model.author}}
-			  		</div>
-				</div>
-			{{/if}}
+        {{#if model.author}}
+        <dt>{{t 'post.author'}}</dt>
+        <dd>{{model.author}}</dd>
+        {{/if}}
 
-			{{#if model.publisher}}
-				<div class="row">
-			  		<div class="col-xs-3">
-			    		<strong>{{t 'post.publisher'}}</strong>
-			  		</div>
-			  		<div class="col-xs-9">
-			    		{{model.publisher}}
-			  		</div>
-				</div>
-			{{/if}}
+        {{#if model.publisher}}
+        <dt>{{t 'post.publisher'}}</dt>
+        <dd>{{model.publisher}}</dd>
+        {{/if}}
 
-			{{#if model.year}}
-				<div class="row">
-			  		<div class="col-xs-3">
-			    		<strong>{{t 'post.pub_year'}}</strong>
-			  		</div>
-			  		<div class="col-xs-9">
-			    		{{model.year}}
-			  		</div>
-				</div>
-			{{/if}}
+        {{#if model.year}}
+        <dt>{{t 'post.pub_year'}}</dt>
+        <dd>{{model.year}}</dd>
+        {{/if}}
 
-      <div class="row">
-        <div class="col-xs-3">
-          <strong>{{t 'post.copyrightStatus'}}</strong>
-        </div>
-        <div class="col-xs-9">
+        <dt>{{t 'post.copyrightStatus'}}</dt>
+        <dd>
           {{#if model.copyrighted}}
-            <div class="label label-danger btn-xs">{{t 'post.copyrighted'}}</div>
+          <div class="label label-danger">{{t 'post.copyrighted'}}</div>
           {{else}}
-            <div class="label label-success btn-xs">{{t 'post.notCopyrighted'}}</div>
+          <div class="label label-success">{{t 'post.notCopyrighted'}}</div>
           {{/if}}
+        </dd>
+
+        {{#if model.language}}
+        <dt>{{t 'post.lang'}}</dt>
+        <dd>{{translatedLanguage}}</dd>
+        {{/if}}
+
+        {{#if model.page_count}}
+        <dt>{{t 'post.pages'}}</dt>
+        <dd>{{model.page_count}}</dd>
+        {{/if}}
+
+        {{#if source_url}}
+        <dt>{{t 'post.source'}}</dt>
+        <dd><a href={{source_url}} target="_blank">{{t 'post.goto_source'}}</a></dd>
+        {{/if}}
+
+        {{#if pdf_links}}
+        <dt>{{t 'post.file'}}</dt>
+        {{#each pdf_links as |pdf_link|}}
+        {{#if model.unlocked}}
+        <dd><a href={{pdf_link}} target="_blank">PDF</a></dd>
+        {{else}}
+        <dd><em>{{t 'post.filesNotAccessible'}}</em></dd>
+        {{/if}}
+        {{/each}}
+        {{/if}}
+
+      </dl>
+
+      {{#if model.copyrighted}}
+      {{#if session.isAuthenticated}}
+      <h2>{{t 'post.links'}}</h2>
+      {{#if model.links}}
+      <table class="table">
+        <thead>
+          <tr>
+            <th>{{t 'link.url'}}</th>
+            <th>{{t 'link.expireDate'}}</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each model.links as |link|}}
+          <tr>
+            <td>{{hostOrigin}}/#/link/{{link.link_hash}}</td>
+            <td>{{link.expire_date}}</td>
+            <td><button class="btn btn-xs btn-danger" {{action 'deleteDate' link}}>Radera</button></td>
+          </tr>
+          {{/each}}
+        </tbody>
+      </table>
+      {{/if}}
+      <div class="col-xs-12 col-sm-3">
+        <div class="input-group">
+          {{input value=link_date class="form-control" placeholder="YYYY-MM-DD"}}
+          <span class="input-group-btn">
+            <button class="btn btn-default" type="button" {{action 'createDate' model.name link_date}}>{{t 'post.create_link'}}</button>
+          </span>
         </div>
       </div>
 
-			{{#if model.language}}
-				<div class="row">
-			  		<div class="col-xs-3">
-			    		<strong>{{t 'post.lang'}}</strong>
-			  		</div>
-			  		<div class="col-xs-9">
-			    		{{model.language}}
-			  		</div>
-				</div>
-			{{/if}}
+      {{/if}}
+      {{/if}}
 
-			{{#if model.page_count}}
-				<div class="row">
-			  		<div class="col-xs-3">
-			    		<strong>{{t 'post.pages'}}</strong>
-			  		</div>
-			  		<div class="col-xs-9">
-			    		{{model.page_count}}
-			  		</div>
-				</div>
-			{{/if}}
 
-			{{#if source_url}}
-				<div class="row">
-			  		<div class="col-xs-3">
-			    		<strong>{{t 'post.source'}}</strong>
-			  		</div>
-			  		<div class="col-xs-9">
-			    		<a href={{source_url}} target="_blank">{{t 'post.goto_source'}}</a>
-			  		</div>
-				</div>
-			{{/if}}
-
-			{{#each pdf_links as |pdf_link|}}
-				<div class="row">
-			  		<div class="col-xs-3">
-			    		<strong>{{t 'post.file'}}</strong>
-			  		</div>
-			  		<div class="col-xs-9">
-            {{#if model.unlocked}}
-			    		<a class="btn btn-default btn-xl" href={{pdf_link}} target="_blank">PDF</a>
-              {{else}}
-                <button class="btn btn-default btn-xl" disabled="true">PDF</button> ({{t 'post.filesNotAccessible'}})
-              {{/if}}
-			  		</div>
-				</div>
-			{{/each}}
-			
-
-		</div>
-	</div>
-
-{{#if model.copyrighted}}
-  {{#if session.isAuthenticated}}
-  <h2>{{t 'post.links'}}</h2>
-  {{#if model.links}}
-    <table class="table">
-    <thead>
-      <tr>
-        <th>{{t 'link.url'}}</th>
-        <th>{{t 'link.expireDate'}}</th>
-        <th></th>
-      </tr>
-    </thead>
-    <tbody>
-    {{#each model.links as |link|}}
-      <tr>
-        <td>{{hostOrigin}}/#/link/{{link.link_hash}}</td>
-        <td>{{link.expire_date}}</td>
-        <td><button class="btn btn-xs btn-danger" {{action 'deleteDate' link}}>Radera</button></td>
-      </tr>
-    {{/each}}
-    </tbody>
-  </table>
-  {{/if}}
-    <div class="col-xs-12 col-sm-3">
-	  <div class="input-group">
-		  {{input value=link_date class="form-control" placeholder="YYYY-MM-DD"}}
-	  	<span class="input-group-btn">
-		    <button class="btn btn-default" type="button" {{action 'createDate' model.name link_date}}>{{t 'post.create_link'}}</button>
-	  	</span>
-  	</div>
     </div>
-
-  {{/if}}
-{{/if}}
-
+  </div>
 </div>
