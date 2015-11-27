@@ -33,7 +33,7 @@ export default Ember.Controller.extend({
 		return links;
 	}),
 
-  thumbnail: Ember.computed('package', function(){
+  thumbnail: Ember.computed('model.name', function(){
     return ENV.APP.serviceURL + '/mets_packages/' + this.get('model.name') + '/thumbnail?width=300';
   }),
 
