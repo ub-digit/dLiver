@@ -7,7 +7,7 @@
 {{#if package.highlights}}
   <ul class="list-unstyled highlights">
     {{#each package.highlights as |highlight|}}
-      <li>{{highlight.field}}: {{{highlight.highlight}}}</li>
+      {{highlight-item label=highlight.field value=highlight.highlight}}
     {{/each}}
   </ul>
 {{/if}}
