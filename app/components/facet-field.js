@@ -7,11 +7,34 @@ export default Ember.Component.extend({
     return this.get('facetCounts.facet_fields')[this.get('facetField')];
   }),
 
+  maxNumberToShow: 10,
+
+  showAll: false,
+
+  showToggleAllLink: Ember.computed.gt('maxNumberToShow', this.get('facetValues.length')),
+
+  limitedFacetValues: Ember.computed('facetValues', 'showAll', function(){
+    if (this.get('showAll')) {
+      return this.get('facetValues');
+    } else {
+      return this.get('facetValues').slice(0, this.get('maxNumberToShow') - 1);
+    }
+  }),
+
   addFacetToQueryAction: 'addFacetToQuery',
   removeFacetFromQueryAction: 'removeFacetFromQuery',
 
   facetFieldTranslation: Ember.computed('facetField', function(){
     return this.get('i18n').t('facet.' + this.get('facetField'));
+  }),
+
+  toggleAllTranslation: Ember.computed('showAll', function(){
+    if (this.get('showAll')) {
+      return this.get('i18n').t('facet.showSome');
+    } else {
+      return this.get('i18n').t('facet.showAll');
+    }
+
   }),
 
   actions: {
@@ -21,6 +44,11 @@ export default Ember.Component.extend({
 
     removeFacetFromQuery: function(facetLabel){
       this.sendAction('removeFacetFromQueryAction', this.get('facetField'), facetLabel);
+    },
+    toggleShowAll: function(){
+
+      this.toggleProperty('showAll');
+
     }
   }
 });

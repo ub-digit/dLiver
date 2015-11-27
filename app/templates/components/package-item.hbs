@@ -14,11 +14,12 @@
 <div>
 {{#each package.type_of_record as |typeOfRecord|}}
   {{type-of-record typeOfRecord=typeOfRecord}}
-{{/each}}  
+{{/each}}
 {{#if package.copyrighted}}
   <div class="label label-danger btn-xs">{{t 'post.copyrighted'}}</div>
 {{else}}
   <div class="label label-success btn-xs">{{t 'post.notCopyrighted'}}</div>
 {{/if}}
+
 </div>
 </div>

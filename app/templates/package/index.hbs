@@ -1,21 +1,22 @@
   <div class="row">
-  <div class="col-xs-12">
-	<div class="input-group">
-	  {{debounced-input 
+  <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
+	<div class="input-group input-group-lg">
+	  {{debounced-input
+    id='searchInput'
     fireAtStart=false
-    value=query 
+    value=query
     class="form-control"
     placeholder='Titel, Författare, År ...'
     }}
 	  <span class="input-group-btn">
-	    <button class="btn btn-default" type="button" {{action 'clearSearch'}}>Rensa</button>
+	    <button class="btn btn-default" type="button" {{action 'clearSearch'}}><i class="fa fa-times-circle"></i></button>
 	  </span>
     </div>
   </div>
   </div>
 
-{{#if model}}
-  <div class="row">
+{{#if model.meta.query.query}}
+  <div class="row number-of-results">
     <div class="col-xs-12 text-center">
       Antal träffar: {{model.meta.query.total}}
     </div>
@@ -31,5 +32,12 @@
         {{package-item package=package}}
       {{/each}}
 </div>
+</div>
+{{else}}
+<div class="row search-splash text-center">
+  <div class="col-xs-12">
+    <i class="fa fa-search"></i>
+    <span>Sök bland digitaliserat material</span>
+  </div>
 </div>
 {{/if}}

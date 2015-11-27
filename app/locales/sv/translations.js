@@ -45,8 +45,8 @@ export default {
     full_title: "Fullständig titel",
     title: "Titel",
     sub_title: "Undertitel",
-    author: "Författare", 
-    publisher: "Utgivare", 
+    author: "Författare",
+    publisher: "Utgivare",
     pub_year: "Utgivningsår",
     lang: "Språk",
     pages: "Sidor",
@@ -81,6 +81,8 @@ export default {
   },
 
   facet: {
+    showAll: "Visa alla",
+    showSome: "Visa färre",
     copyrighted: "Upphovsrätt",
     copyrightedValues: {
       true: "Upphovsrättsskyddat",

@@ -18,6 +18,7 @@ export default Ember.Controller.extend({
     clearSearch: function(){
       this.set('query', "");
       this.set('facet_queries', []);
+      Ember.$('#searchInput').focus();
     }
   }
 });
