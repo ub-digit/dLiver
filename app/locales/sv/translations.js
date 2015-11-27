@@ -83,6 +83,7 @@ export default {
   facet: {
     showAll: "Visa alla",
     showSome: "Visa färre",
+    title_facet: "Titel",
     copyrighted: "Upphovsrätt",
     copyrightedValues: {
       true: "Upphovsrättsskyddat",
@@ -116,7 +117,7 @@ export default {
     language: "Språk",
     languageValues: {
       swe: "Svenska",
-      eng: "Engleska",
+      eng: "Engelska",
       ita: "Italienska",
       Danska: "Danska",
       hun: "Ungerska",
