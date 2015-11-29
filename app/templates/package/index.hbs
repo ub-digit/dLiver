@@ -9,8 +9,13 @@
     placeholder='Titel, Författare, År ...'
     }}
 	  <span class="input-group-btn">
-	    <button class="btn btn-default" type="button" {{action 'clearSearch'}}><i class="fa fa-times-circle"></i></button>
+	    <button class="btn btn-default" type="button" {{action 'clearSearch'}} title="Rensa sökvillkor"><i class="fa fa-times-circle"></i></button>
 	  </span>
+    </div>
+    <div class="facet-query-container">
+    {{#each model.meta.query.facet_queries as |facetQuery|}}
+      {{facet-query facetQuery=facetQuery}}
+    {{/each}}
     </div>
   </div>
   </div>
