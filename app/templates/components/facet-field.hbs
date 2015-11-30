@@ -1,6 +1,6 @@
 {{#if facetValues}}
   <h3>{{facetFieldTranslation}}</h3>
-  <ul class="list-unstyled">
+  <ul class="list-unstyled facet-list">
     {{#each limitedFacetValues as |facetValue| }}
     {{facet-value facetField=facetField facetValue=facetValue facetQueries=facetQueries}}
     {{/each}}

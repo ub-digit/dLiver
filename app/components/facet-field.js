@@ -18,11 +18,24 @@ export default Ember.Component.extend({
   }),
 
   limitedFacetValues: Ember.computed('facetValues', 'showAll', function(){
+		var facetValues;
+		var maxShow = this.get('maxNumberToShow');
     if (this.get('showAll')) {
-      return this.get('facetValues');
+      facetValues = this.get('facetValues').map(function(item) {
+				Ember.set(item, 'visibility_class', 'show-value');
+				return item;
+			});
     } else {
-      return this.get('facetValues').slice(0, this.get('maxNumberToShow'));
+      facetValues = this.get('facetValues').map(function(item,i) {
+				if(i < maxShow) {
+					Ember.set(item, 'visibility_class', 'show-value');
+				} else {
+					Ember.set(item, 'visibility_class', 'hide-value');
+				}
+				return item;
+			});
     }
+		return facetValues;
   }),
 
   addFacetToQueryAction: 'addFacetToQuery',

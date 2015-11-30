@@ -1,0 +1,20 @@
+.facet-list {
+    li {
+        transition: all 0.2s;
+        -webkit-transition: all 0.2s;
+        -o-transition: all 0.2s;
+        -ms-transition: all 0.2s;
+        -moz-transition: all 0.2s;
+        &.hide-value {
+            visibility: hidden;
+            opacity: 0; 
+            line-height: 0;
+        }
+
+        &.show-value {
+            visibility: visible;
+            opacity: 1; 
+            line-height: inherit;
+        }
+    }
+}
