@@ -5,6 +5,12 @@ export default Ember.Component.extend({
 
   tagName: 'li',
 
+	classNameBindings: ['visibilityClass'],
+	
+	visibilityClass: Ember.computed('facetValue.visibility_class', function(x) {
+		return this.get('facetValue.visibility_class');
+	}),
+
   addFacetToQueryAction: 'addFacetToQuery',
   removeFacetFromQuery: 'removeFacetFromQuery',
 
