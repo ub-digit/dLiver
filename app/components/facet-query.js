@@ -14,8 +14,13 @@ export default Ember.Component.extend({
     return this.get('i18n').t('facet.' + this.get('facetField'));
   }),
 
-  facetValue: Ember.computed('facetQuery', function(){
-    return this.get('facetQuery').split(':')[1].replace(/^"(.*)"$/, '$1');
+  facetValue: Ember.computed('facetQuery', 'facetField', function(){
+		var facetQuery = this.get('facetQuery');
+		var facetField = this.get('facetField');
+		// Extract rest of field as facetValue, ignoring citations. This prevents ":" from being
+		// an issue which would have been the case with splitting.
+		var facetValue = facetQuery.substring(facetField.length+1).replace(/^"(.*)"$/, '$1');
+		return facetValue;
   }),
 
   translatedFacetValue: Ember.computed('facetValue', function(){
