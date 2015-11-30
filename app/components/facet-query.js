@@ -2,7 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
   tagName: 'span',
-  classNames: ['facet-query-item'],
+  classNames: ['label', 'label-primary', 'facet-query-item'],
 
   i18n: Ember.inject.service(),
 
@@ -25,12 +25,12 @@ export default Ember.Component.extend({
     if (translation.indexOf("Missing translation") === 0){
       translation = this.get('facetValue');
     }
-    return translation.trim(); 
+    return translation.trim();
   }),
 
   removeFacetFromQueryAction: 'removeFacetFromQuery',
   actions: {
-    
+
     removeFacetFromQuery: function(){
       this.sendAction('removeFacetFromQueryAction', this.get('facetField'), this.get('facetValue'));
     }
