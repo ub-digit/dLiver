@@ -18,8 +18,9 @@ Router.map(function() {
   	this.route('index');
   	this.route('show', {path: '/:name'});
   });
-	this.resource('link', {path: '/link/:linkHash'});
-	this.route('link.error', {path: '/link/error'});
+  this.resource('link', {path: '/link/:linkHash'});
+  this.route('link.error', {path: '/link/error'});
+  this.route('about');
 });
 
 export default Router;

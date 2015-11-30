@@ -17,7 +17,11 @@ export default {
     login: 'Logga in',
     logout: 'Logga ut'
   },
-
+  footer: {
+    copyright: "Göteborgs universitetsbibliotek",
+    websiteLink: "Bibliotekets webbplats",
+    about: "Om dLiver"
+  },
   errors: {
     link: {
       notFound: "Länken finns ej"
@@ -53,7 +57,7 @@ export default {
     ordinal_3: "Special",
     chronological_1: "År",
     chronological_2: "Månad",
-    chronological_3: "Dag",    
+    chronological_3: "Dag",
     publisher: "Utgivare",
     pub_year: "Utgivningsår",
     lang: "Språk",
