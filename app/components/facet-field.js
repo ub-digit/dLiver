@@ -3,6 +3,11 @@ import Ember from 'ember';
 export default Ember.Component.extend({
   i18n: Ember.inject.service(),
 
+  classNames: ['panel', 'panel-default'],
+
+  classNameBindings: ['isEmpty:empty'],
+  isEmpty: Ember.computed.empty('facetValues'),
+
   facetValues: Ember.computed('facetField', 'facetCounts', function(){
     return this.get('facetCounts.facet_fields')[this.get('facetField')];
   }),

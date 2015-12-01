@@ -1,11 +1,26 @@
-.facet-list {
-    li {
-        &.hide-value {
-          display: none;
-        }
+.empty {
+  display: none;
+}
 
-        &.show-value {
-          display: list-item;
-        }
+.facet-list {
+  display: table;
+  width: 100%;
+  li {
+    display: table-row;
+    .facet-label {
+      display: table-cell;
+      padding-right: 1em;
     }
+    .facet-count {
+      display: table-cell;
+      text-align: right;
+    }
+    &.hide-value {
+      display: none;
+    }
+
+    &.show-value {
+      //display: list-item;
+    }
+  }
 }

@@ -1,16 +1,20 @@
 {{#if facetValues}}
-  <h3>{{facetFieldTranslation}}</h3>
-  <ul class="list-unstyled facet-list">
-    {{#each limitedFacetValues as |facetValue| }}
-    {{facet-value facetField=facetField facetValue=facetValue facetQueries=facetQueries}}
-    {{/each}}
-  </ul>
-  {{#if showToggleAllLink}}
-    <a href="#" {{action 'toggleShowAll'}}>{{toggleAllTranslation}}</a>
-    {{#if showAll}}
-      <i class="fa fa-chevron-up"></i>
-    {{else}}
-      <i class="fa fa-chevron-down"></i>
+  <div class="panel-heading">
+    <h3 class="panel-title">{{facetFieldTranslation}}</h3>
+  </div>
+  <div class="panel-body">
+    <ul class="list-unstyled facet-list">
+      {{#each limitedFacetValues as |facetValue| }}
+      {{facet-value facetField=facetField facetValue=facetValue facetQueries=facetQueries}}
+      {{/each}}
+    </ul>
+    {{#if showToggleAllLink}}
+      <a href="#" {{action 'toggleShowAll'}}>{{toggleAllTranslation}}</a>
+      {{#if showAll}}
+        <i class="fa fa-chevron-up"></i>
+      {{else}}
+        <i class="fa fa-chevron-down"></i>
+      {{/if}}
     {{/if}}
-  {{/if}}
+  </div>
 {{/if}}
