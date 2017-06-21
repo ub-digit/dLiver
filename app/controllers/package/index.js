@@ -1,8 +1,9 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
-  queryParams: ['query', 'facet_queries'],
+  queryParams: ['query', 'page', 'facet_queries'],
   query: "",
+  page: 1,
   facet_queries: Ember.A([]),
 
   actions: {

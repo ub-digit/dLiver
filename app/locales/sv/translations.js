@@ -149,6 +149,10 @@ export default {
     ordinal_1_facet: "Årgång",
     ordinal_2_facet: "Nummer",
     ordinal_3_facet: "Special"
+  },
+  pagination: {
+    previous: "Föregående",
+    next: "Nästa"
   }
 
 };

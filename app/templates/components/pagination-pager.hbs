@@ -5,12 +5,12 @@
   {{#if pagination.previous}}
     <li>
       {{#link-to (query-params page=pagination.previous) class=""}}
-      <span>{{t 'components.paginationPager.previous'}}</span>
+      <span>{{t 'pagination.previous'}}</span>
       {{/link-to}}
     </li>
   {{else}}
     <li class="disabled">
-      <a href="javascript:void(0)"><span>{{t 'components.paginationPager.previous'}}</span></a>
+      <a href="javascript:void(0)"><span>{{t 'pagination.previous'}}</span></a>
     </li>
   {{/if}}
   {{#each pageArray as |page|}}
@@ -25,14 +25,14 @@
   {{#if pagination.next}}
     <li>
       {{#link-to (query-params page=pagination.next)}}
-      <span>{{t 'components.paginationPager.next'}}</span>
+      <span>{{t 'pagination.next'}}</span>
       {{/link-to}}
     </li>
   {{else}}
     <li class="disabled">
-      <a href="javascript:void(0)"><span>{{t 'components.paginationPager.next'}}</span></a>
+      <a href="javascript:void(0)"><span>{{t 'pagination.next'}}</span></a>
     </li>
   {{/if}}
 </ul>
-</nav> 
+</nav>
 {{/if}}
