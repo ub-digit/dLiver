@@ -39,15 +39,6 @@
         <dd>{{model.year}}</dd>
         {{/if}}
 
-        <dt>{{t 'post.copyrightStatus'}}</dt>
-        <dd>
-          {{#if model.copyrighted}}
-          <div class="label label-danger">{{t 'post.copyrighted'}}</div>
-          {{else}}
-          <div class="label label-success">{{t 'post.notCopyrighted'}}</div>
-          {{/if}}
-        </dd>
-
         {{#if model.language}}
         <dt>{{t 'post.lang'}}</dt>
         <dd>{{translatedLanguage}}</dd>
